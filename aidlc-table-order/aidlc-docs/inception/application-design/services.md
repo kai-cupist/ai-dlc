@@ -84,9 +84,33 @@
 | 컴포넌트 | 목적 |
 |----------|------|
 | **JWTMiddleware** | 모든 인증 필요 엔드포인트에서 토큰 검증 |
-| **RateLimiter** | 공개 엔드포인트 Rate Limiting (SECURITY-11) |
-| **RequestValidator** | 입력 검증 (Pydantic 스키마, SECURITY-05) |
+| **RateLimiter** | 공개 엔드포인트 Rate Limiting (SECURITY-11), 복합 키 기반 — 아래 상세 참조 |
+| **RequestValidator** | 입력 검증 (Pydantic DTO, SECURITY-05) |
 | **ErrorHandler** | 글로벌 에러 핸들러 (SECURITY-15) |
 | **StructuredLogger** | 구조화된 로깅 (SECURITY-03) |
 | **SecurityHeaders** | HTTP 보안 헤더 (SECURITY-04) |
 | **CORSMiddleware** | CORS 정책 (SECURITY-08) |
+
+---
+
+## RateLimiter 상세 설계
+
+### 배경
+매장 내 모든 태블릿이 같은 공유기(NAT) 뒤에서 동일 공인 IP를 공유하므로, 단순 IP 기반 제한은 정상 사용자를 차단할 수 있음. 복합 식별 키를 사용하여 엔드포인트 특성에 맞게 제한 단위를 분리함.
+
+### 엔드포인트별 Rate Limit 정책
+
+| 엔드포인트 | 식별 키 | 제한 | 근거 |
+|-----------|---------|------|------|
+| `POST /auth/admin/login` | IP + store_id + username | 10회/분 | 브루트포스 방어, 같은 IP의 다른 계정은 허용 |
+| `POST /auth/table/setup` | IP + store_id | 60회/분 | 관리자가 50+테이블 연속 설정 가능해야 함 |
+| `POST /auth/table/auto-login` | IP + store_id + table_number | 10회/분 | 테이블별 제한, 같은 IP의 다른 테이블은 허용 |
+| `POST /orders` | JWT subject (table_id) | 30회/분 | 인증된 요청이므로 토큰 기반 식별 |
+| `POST /recommendations` | JWT subject (table_id) | 20회/분 | 인증된 요청이므로 토큰 기반 식별 |
+
+### 구현 방침
+- **라이브러리**: `slowapi` (FastAPI 통합, `limits` 래핑)
+- **저장소**: 인메모리로 시작, Redis로 교체 가능하도록 추상화
+- **초과 시 응답**: `429 Too Many Requests` + `Retry-After` 헤더
+- **인증된 엔드포인트**: JWT subject 기반 → NAT IP 공유 문제 없음
+- **미인증 엔드포인트**: 복합 키(IP + 요청 파라미터) 기반 → 같은 IP 내 다른 사용자 구분

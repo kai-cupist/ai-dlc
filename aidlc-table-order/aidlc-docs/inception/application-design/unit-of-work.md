@@ -29,6 +29,7 @@
 | **산출물** | `backend/` |
 | **개발 순서** | Phase 2 (shared와 동시 또는 직후) |
 | **아키텍처** | 계층형 (Router → Service → Repository) + TDD |
+| **배포** | Docker + AWS ECS Fargate (Terraform으로 인프라 관리) |
 
 ## Unit 3: customer-web
 
@@ -77,13 +78,20 @@ aidlc-table-order/
 |           +-- utils/       # 유틸리티
 +-- backend/                 # Unit 2: FastAPI 서버
 |   +-- app/
-|       +-- routers/         # API 라우터
-|       +-- services/        # 비즈니스 로직
-|       +-- repositories/    # 데이터 접근
-|       +-- models/          # SQLAlchemy 모델
-|       +-- schemas/         # Pydantic 스키마
-|       +-- core/            # 설정, 보안, 미들웨어
+|   |   +-- routers/         # API 라우터
+|   |   +-- services/        # 비즈니스 로직
+|   |   +-- repositories/    # 데이터 접근
+|   |   +-- dto/             # Pydantic DTO (요청/응답)
+|   +-- cores/
+|   |   +-- db/
+|   |   |   +-- models/      # SQLAlchemy 모델
+|   |   |   +-- session.py   # DB 엔진/세션 설정
+|   |   +-- security/        # JWT, 미들웨어, RateLimiter
+|   |   +-- config.py        # 앱 설정
+|   |   +-- logging.py       # 구조화된 로깅
 |   +-- tests/               # 테스트 (TDD)
+|   +-- Dockerfile           # 컨테이너 이미지 정의
+|   +-- infra/               # Terraform IaC (ECS Fargate, ALB, RDS 등)
 +-- apps/
 |   +-- customer/            # Unit 3: 고객용 앱
 |   |   +-- src/
@@ -97,6 +105,6 @@ aidlc-table-order/
 |           +-- components/
 |           +-- contexts/
 |           +-- hooks/
-+-- docker-compose.yml       # Docker 구성
++-- docker-compose.yml       # 로컬 개발 환경 (Docker Compose)
 +-- package.json             # 모노레포 루트
 ```

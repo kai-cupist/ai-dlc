@@ -4,9 +4,11 @@
 
 | 항목 | 결정 |
 |------|------|
-| **백엔드 패턴** | 단순 계층형 (Router → Service → Repository) + TDD |
+| **백엔드 패턴** | 계층형 (Router → Service → Repository) + TDD |
+| **백엔드 구조** | `app/` (비즈니스), `cores/` (공통 인프라), `tests/` |
 | **프론트엔드 상태** | TanStack Query (서버) + Context API (로컬) |
 | **코드 공유** | 모노레포 (shared 패키지 + customer 앱 + admin 앱) |
+| **배포 인프라** | Docker + AWS ECS Fargate (Terraform IaC) |
 
 ## 시스템 구조
 
@@ -101,9 +103,9 @@
 |------|-----------|
 | SECURITY-03 | StructuredLogger (전역) |
 | SECURITY-04 | SecurityHeaders 미들웨어 |
-| SECURITY-05 | Pydantic 스키마 검증 (전 엔드포인트) |
+| SECURITY-05 | Pydantic DTO 검증 (전 엔드포인트) |
 | SECURITY-08 | JWTMiddleware, CORS 설정 |
-| SECURITY-11 | RateLimiter (공개 엔드포인트) |
+| SECURITY-11 | RateLimiter (복합 키 기반: 미인증=IP+요청 파라미터, 인증=JWT subject) |
 | SECURITY-12 | AuthService (bcrypt, 세션 관리, 브루트포스) |
 | SECURITY-15 | ErrorHandler (글로벌 에러 핸들러) |
 
