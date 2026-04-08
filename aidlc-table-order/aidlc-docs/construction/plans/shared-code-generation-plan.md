@@ -80,10 +80,10 @@
 - [x] `src/utils/index.ts` - re-export
 
 ### Step 7: OpenAPI 스펙
-- [ ] `openapi.json` - OpenAPI 3.0 스펙 (28개 엔드포인트, 스키마 정의) ← 다음
+- [x] `openapi.json` - OpenAPI 3.0 스펙 (28개 엔드포인트, 21개 스키마)
 
 ### Step 8: 문서화
-- [ ] `aidlc-docs/construction/shared/code/code-summary.md` - 생성된 코드 요약
+- [x] `aidlc-docs/construction/shared/code/code-summary.md` - 생성된 코드 요약
 
 ---
 

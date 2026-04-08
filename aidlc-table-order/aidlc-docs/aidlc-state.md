@@ -42,7 +42,7 @@
 - [x] Infrastructure Design - 완료 (2026-04-08)
 
 #### Phase 1: shared (API 계약)
-- [ ] Code Generation: shared - 진행 중 (Step 1~6 완료, Step 7~8 남음)
+- [x] Code Generation: shared - 완료 (2026-04-08)
 
 #### Phase 2: 병렬 개발
 - [ ] Code Generation: backend-api - 대기
