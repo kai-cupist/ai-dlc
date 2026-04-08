@@ -217,3 +217,14 @@
 - logical-components.md: 미들웨어 스택, DI 구성, DB 인덱스 11개, 설정 관리 15개 항목
 
 ---
+
+## CONSTRUCTION - backend-api Infrastructure Design
+**타임스탬프**: 2026-04-08T11:25:00Z
+**사용자 입력**: "yes"
+**AI 응답**: 추가 질문 불필요 (인프라 결정 완료), 산출물 2개 생성
+**컨텍스트**:
+- infrastructure-design.md: ECS Fargate, ALB, RDS PostgreSQL 16, S3, ECR, Secrets Manager, CloudWatch, VPC/서브넷/보안그룹, Terraform 모듈 구성
+- deployment-architecture.md: docker-compose 로컬 환경, Dockerfile 멀티스테이지, ECS 태스크 정의, ALB/RDS 설정, CI/CD 파이프라인 설계
+- 다음: Code Generation (backend-api 설계 단계 전체 완료)
+
+---

@@ -4,7 +4,7 @@
 - **프로젝트명**: 테이블오더 서비스
 - **프로젝트 유형**: Greenfield (신규 프로젝트)
 - **시작일**: 2026-04-08T10:45:00Z
-- **현재 단계**: CONSTRUCTION - backend-api NFR Design (완료)
+- **현재 단계**: CONSTRUCTION - backend-api Infrastructure Design (완료)
 
 ## 워크스페이스 상태
 - **기존 코드**: 없음
@@ -36,7 +36,7 @@
 - [x] Functional Design - backend-api 완료 (2026-04-08)
 - [x] NFR Requirements - backend-api 완료 (2026-04-08)
 - [x] NFR Design - backend-api 완료 (2026-04-08)
-- [ ] Infrastructure Design - EXECUTE
+- [x] Infrastructure Design - backend-api 완료 (2026-04-08)
 - [ ] Code Generation - EXECUTE (항상)
 - [ ] Build and Test - EXECUTE (항상)
 
