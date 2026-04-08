@@ -1,0 +1,48 @@
+.card {
+  padding: 14px;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.name {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.options {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.subtotal {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
