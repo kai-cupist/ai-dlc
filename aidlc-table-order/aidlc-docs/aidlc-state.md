@@ -4,7 +4,7 @@
 - **프로젝트명**: 테이블오더 서비스
 - **프로젝트 유형**: Greenfield (신규 프로젝트)
 - **시작일**: 2026-04-08T10:45:00Z
-- **현재 단계**: INCEPTION - Workspace Detection
+- **현재 단계**: INCEPTION - Requirements Analysis (완료)
 
 ## 워크스페이스 상태
 - **기존 코드**: 없음
@@ -17,13 +17,16 @@
 - **구조 패턴**: code-generation.md의 Critical Rules 참조
 
 ## Extension 설정
-- **Security Baseline**: 미결정 (Requirements Analysis에서 확인 예정)
+
+| Extension | Enabled | Decided At |
+|---|---|---|
+| Security Baseline | Yes | Requirements Analysis |
 
 ## 단계 진행 상황
 
 ### INCEPTION 단계
 - [x] Workspace Detection - 완료 (2026-04-08)
-- [ ] Requirements Analysis - 대기 중
+- [x] Requirements Analysis - 완료 (2026-04-08)
 - [ ] User Stories - 대기 중
 - [ ] Workflow Planning - 대기 중
 - [ ] Application Design - 대기 중
