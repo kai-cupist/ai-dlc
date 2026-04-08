@@ -4,7 +4,7 @@
 - **프로젝트명**: 테이블오더 서비스
 - **프로젝트 유형**: Greenfield (신규 프로젝트)
 - **시작일**: 2026-04-08T10:45:00Z
-- **현재 단계**: INCEPTION - Application Design (완료)
+- **현재 단계**: INCEPTION - Units Generation (완료)
 
 ## 워크스페이스 상태
 - **기존 코드**: 없음
@@ -30,7 +30,7 @@
 - [x] User Stories - 완료 (2026-04-08)
 - [x] Workflow Planning - 완료 (2026-04-08)
 - [x] Application Design - 완료 (2026-04-08)
-- [ ] Units Generation - EXECUTE
+- [x] Units Generation - 완료 (2026-04-08)
 
 ### CONSTRUCTION 단계 (Unit별 반복)
 - [ ] Functional Design - EXECUTE

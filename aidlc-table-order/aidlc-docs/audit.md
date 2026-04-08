@@ -166,3 +166,19 @@
 - aidlc-state.md 업데이트: Application Design 완료
 
 ---
+
+## Units Generation - 질문 및 답변, 유닛 생성
+**타임스탬프**: 2026-04-08T11:10:00Z
+**사용자 입력**: unit-of-work-plan.md 답변 완료 후 "답변 완료"
+**AI 응답**: 답변 분석 (모순/모호 없음), 유닛 산출물 3개 생성
+**컨텍스트**:
+- Q1: B (backend + customer 동시 → admin)
+- Q2: A (shared 별도 유닛)
+- 유닛 4개: shared, backend-api, customer-web, admin-web
+- 개발 순서: Phase1 shared → Phase2 backend+customer → Phase3 admin
+- 스토리 매핑: 26개 전체 할당, 미할당 0개
+- 생성 산출물: unit-of-work.md, unit-of-work-dependency.md, unit-of-work-story-map.md
+- aidlc-state.md 업데이트: Units Generation 완료
+- INCEPTION 단계 전체 완료, 다음: CONSTRUCTION 단계
+
+---
