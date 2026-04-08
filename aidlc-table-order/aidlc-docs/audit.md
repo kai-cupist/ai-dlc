@@ -196,3 +196,14 @@
 - 비즈니스 규칙 6개 그룹 BR-01~BR-06 (business-rules.md)
 
 ---
+
+## CONSTRUCTION - backend-api NFR Requirements
+**타임스탬프**: 2026-04-08T11:20:00Z
+**사용자 입력**: 질문 답변 (Q1: B 비동기, Q2: A Alembic) 후 "go"
+**AI 응답**: NFR 산출물 2개 생성
+**컨텍스트**:
+- nfr-requirements.md: 성능(200ms), 보안(SECURITY-01~15), 가용성(99.5%), 신뢰성, 유지보수성
+- tech-stack-decisions.md: 비동기 SQLAlchemy+asyncpg, Alembic, structlog, slowapi, pytest, poetry
+- 사용자 "믿고간다" 승인
+
+---
