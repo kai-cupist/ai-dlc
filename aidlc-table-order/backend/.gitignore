@@ -11,3 +11,10 @@ build/
 .ruff_cache/
 htmlcov/
 .coverage
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+!terraform.tfvars.example
