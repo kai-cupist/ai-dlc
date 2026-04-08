@@ -447,6 +447,7 @@ The Operations stage will eventually include:
 
 ## Key Principles
 
+- **Korean Language (한글 작성)**: ALL documentation, audit logs, questions, completion messages, and any generated content in aidlc-docs/ MUST be written in Korean (한글). This includes stage outputs, requirements, user stories, design documents, plans, build instructions, and all user-facing messages. Technical terms, code identifiers, and file names may remain in English.
 - **Adaptive Execution**: Only execute stages that add value
 - **Transparent Planning**: Always show execution plan before starting
 - **User Control**: User can request stage inclusion/exclusion
