@@ -4,7 +4,7 @@
 - **프로젝트명**: 테이블오더 서비스
 - **프로젝트 유형**: Greenfield (신규 프로젝트)
 - **시작일**: 2026-04-08T10:45:00Z
-- **현재 단계**: CONSTRUCTION - Code Generation 대기 (병렬 전략으로 재구성 완료)
+- **현재 단계**: CONSTRUCTION - Phase 1: shared Code Generation (계획 작성 완료)
 - **개발 전략**: Contract First 병렬 개발 (OpenAPI + MSW mock)
 
 ## 워크스페이스 상태
