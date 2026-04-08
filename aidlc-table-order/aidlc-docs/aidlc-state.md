@@ -4,7 +4,7 @@
 - **프로젝트명**: 테이블오더 서비스
 - **프로젝트 유형**: Greenfield (신규 프로젝트)
 - **시작일**: 2026-04-08T10:45:00Z
-- **현재 단계**: INCEPTION - Requirements Analysis (완료)
+- **현재 단계**: INCEPTION - Workflow Planning (완료)
 
 ## 워크스페이스 상태
 - **기존 코드**: 없음
@@ -27,18 +27,18 @@
 ### INCEPTION 단계
 - [x] Workspace Detection - 완료 (2026-04-08)
 - [x] Requirements Analysis - 완료 (2026-04-08)
-- [ ] User Stories - 대기 중
-- [ ] Workflow Planning - 대기 중
-- [ ] Application Design - 대기 중
-- [ ] Units Generation - 대기 중
+- [x] User Stories - 완료 (2026-04-08)
+- [x] Workflow Planning - 완료 (2026-04-08)
+- [ ] Application Design - EXECUTE
+- [ ] Units Generation - EXECUTE
 
-### CONSTRUCTION 단계
-- [ ] Functional Design
-- [ ] NFR Requirements
-- [ ] NFR Design
-- [ ] Infrastructure Design
-- [ ] Code Generation
-- [ ] Build and Test
+### CONSTRUCTION 단계 (Unit별 반복)
+- [ ] Functional Design - EXECUTE
+- [ ] NFR Requirements - EXECUTE
+- [ ] NFR Design - EXECUTE
+- [ ] Infrastructure Design - EXECUTE
+- [ ] Code Generation - EXECUTE (항상)
+- [ ] Build and Test - EXECUTE (항상)
 
 ### OPERATIONS 단계
 - [ ] Operations (Placeholder)
