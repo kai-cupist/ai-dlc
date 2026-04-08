@@ -182,3 +182,17 @@
 - INCEPTION 단계 전체 완료, 다음: CONSTRUCTION 단계
 
 ---
+
+## CONSTRUCTION - backend-api Functional Design
+**타임스탬프**: 2026-04-08T11:15:00Z
+**사용자 입력**: 질문 답변 완료 후 "답변완료"
+**AI 응답**: 답변 분석 (모순 없음), Functional Design 산출물 3개 생성
+**컨텍스트**:
+- Q1: A+C (인기 메뉴: 주문 횟수 자동 + 관리자 수동)
+- Q2: B+C (대기 시간: 평균 기반 + 관리자 기본값 폴백)
+- Q3: A (이력 무제한 보관)
+- 도메인 엔티티 13개 (domain-entities.md)
+- 비즈니스 로직 8개 플로우 (business-logic-model.md)
+- 비즈니스 규칙 6개 그룹 BR-01~BR-06 (business-rules.md)
+
+---
