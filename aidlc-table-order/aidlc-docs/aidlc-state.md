@@ -1,0 +1,41 @@
+# AI-DLC 상태 추적
+
+## 프로젝트 정보
+- **프로젝트명**: 테이블오더 서비스
+- **프로젝트 유형**: Greenfield (신규 프로젝트)
+- **시작일**: 2026-04-08T10:45:00Z
+- **현재 단계**: INCEPTION - Workspace Detection
+
+## 워크스페이스 상태
+- **기존 코드**: 없음
+- **리버스 엔지니어링 필요**: 아니오
+- **워크스페이스 루트**: /home/ec2-user/environment/aidlc-table-order
+
+## 코드 위치 규칙
+- **애플리케이션 코드**: 워크스페이스 루트 (절대 aidlc-docs/ 내부에 두지 않음)
+- **문서**: aidlc-docs/ 내부에만 저장
+- **구조 패턴**: code-generation.md의 Critical Rules 참조
+
+## Extension 설정
+- **Security Baseline**: 미결정 (Requirements Analysis에서 확인 예정)
+
+## 단계 진행 상황
+
+### INCEPTION 단계
+- [x] Workspace Detection - 완료 (2026-04-08)
+- [ ] Requirements Analysis - 대기 중
+- [ ] User Stories - 대기 중
+- [ ] Workflow Planning - 대기 중
+- [ ] Application Design - 대기 중
+- [ ] Units Generation - 대기 중
+
+### CONSTRUCTION 단계
+- [ ] Functional Design
+- [ ] NFR Requirements
+- [ ] NFR Design
+- [ ] Infrastructure Design
+- [ ] Code Generation
+- [ ] Build and Test
+
+### OPERATIONS 단계
+- [ ] Operations (Placeholder)
