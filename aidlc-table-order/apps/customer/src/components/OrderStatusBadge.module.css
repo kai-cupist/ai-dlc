@@ -1,0 +1,22 @@
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.preparing {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.completed {
+  background-color: #d1fae5;
+  color: #065f46;
+}

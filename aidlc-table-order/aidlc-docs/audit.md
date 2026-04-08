@@ -270,3 +270,55 @@
 - Phase 1 완료, 다음: Phase 2 병렬 개발 (backend-api + customer-web + admin-web)
 
 ---
+
+## Phase 2: customer-web Code Generation - Part 1 (계획 작성)
+**타임스탬프**: 2026-04-08T12:00:00Z
+**사용자 입력**: "customer-web 유닛 작업을 진행해줘 브랜치 생성부터해"
+**AI 응답**: `feature/customer-web-code-generation` 브랜치 생성 후 customer-web 코드 생성 계획 작성
+**컨텍스트**:
+- 브랜치 생성: `feature/customer-web-code-generation`
+- 계획 문서: `aidlc-docs/construction/plans/customer-web-code-generation-plan.md`
+- 14개 Step, ~50개 파일 예상
+- 16개 스토리 (US-01, US-03~15, US-24, US-25)
+- 기술 스택: React 18 + Vite + TanStack Query + CSS Modules + Vitest
+- 사용자 승인 대기 중
+
+---
+
+## customer-web Code Generation - 승인 요청
+**타임스탬프**: 2026-04-08T12:01:00Z
+**AI 응답**: 코드 생성 계획 요약 및 승인 요청 프롬프트 제시
+**컨텍스트**: Part 1 Planning 완료, 사용자 승인 대기
+
+---
+
+## customer-web Code Generation - 승인 응답
+**타임스탬프**: 2026-04-08T12:02:00Z
+**사용자 입력**: "승인 후 진행"
+**AI 응답**: 승인 확인, Part 2 코드 생성 시작
+**컨텍스트**: 계획 승인 완료, Step 1부터 코드 생성 진행
+
+---
+
+## Phase 2: customer-web Code Generation - Part 2 (생성 완료)
+**타임스탬프**: 2026-04-08T12:15:00Z
+**AI 응답**: 전체 14단계 코드 생성 완료 (52개 파일)
+**컨텍스트**:
+- Step 1: 프로젝트 구조 설정 (package.json, vite, tsconfig, index.html, main.tsx)
+- Step 2: 라우팅 및 앱 쉘 (App.tsx, CustomerLayout)
+- Step 3: Context (AuthContext, CartContext, ErrorContext)
+- Step 4: 커스텀 훅 (useMenus, useOrders, useReceipt, useRecommendations)
+- Step 5: 메뉴 탐색 페이지 (MenuPage, CategorySidebar, MenuSection, MenuCard, AddedTooltip)
+- Step 6: 메뉴 상세/옵션 (MenuDetailPage, OptionSelector, QuantitySelector)
+- Step 7: 장바구니 (CartPage, CartItem)
+- Step 8: 추천/주문확정 (RecommendationSheet, CheckoutPage)
+- Step 9: 대기/영수증 (WaitingPage, OrderProgress, HourglassAnimation, ReceiptPage)
+- Step 10: 주문 내역 (OrderHistoryPage, OrderStatusBadge, RoundBadge)
+- Step 11: 에러 처리 (ErrorBanner, ErrorFallback, SetupGuidePage)
+- Step 12: 글로벌 스타일 (global.css, variables.css)
+- Step 13: 단위 테스트 (6개 테스트 파일 + setup)
+- Step 14: 문서화 (code-summary.md)
+- 16개 스토리 100% 커버
+- 사용자 승인 대기 중
+
+---

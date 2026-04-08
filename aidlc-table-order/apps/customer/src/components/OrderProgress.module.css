@@ -1,0 +1,53 @@
+.container {
+  padding: 0 24px;
+}
+
+.track {
+  position: relative;
+  height: 4px;
+  background-color: var(--color-border);
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+.fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: white;
+  border: 3px solid var(--color-border);
+  transition: border-color 0.3s;
+}
+
+.dotActive {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.labelActive {
+  color: var(--color-primary);
+  font-weight: 600;
+}

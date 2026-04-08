@@ -1,0 +1,23 @@
+.section {
+  padding-top: 16px;
+  scroll-margin-top: 56px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 8px;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--color-border);
+  margin-bottom: 12px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

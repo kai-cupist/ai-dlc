@@ -1,0 +1,93 @@
+.group {
+  margin-bottom: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.requiredTag {
+  padding: 2px 6px;
+  background-color: var(--color-danger);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: border-color 0.1s;
+}
+
+.item:active {
+  background-color: var(--color-bg-hover);
+}
+
+.selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-bg);
+}
+
+.radio,
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-border);
+  font-size: 14px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.radio {
+  border-radius: 50%;
+}
+
+.checkbox {
+  border-radius: 4px;
+}
+
+.selected .radio,
+.selected .checkbox {
+  border-color: var(--color-primary);
+}
+
+.itemName {
+  flex: 1;
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+
+.extraPrice {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}

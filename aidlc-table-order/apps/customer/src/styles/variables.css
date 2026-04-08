@@ -1,0 +1,24 @@
+:root {
+  /* Primary */
+  --color-primary: #ff6b35;
+  --color-primary-bg: #fff5f0;
+
+  /* Text */
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #6b7280;
+  --color-text-disabled: #d1d5db;
+
+  /* Background */
+  --color-bg-secondary: #f9fafb;
+  --color-bg-hover: #f3f4f6;
+
+  /* Border */
+  --color-border: #e5e7eb;
+  --color-border-light: #f3f4f6;
+
+  /* Status */
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-warning-bg: #fffbeb;
+  --color-success: #10b981;
+}
