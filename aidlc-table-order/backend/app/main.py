@@ -199,11 +199,12 @@ async def health_check() -> dict:
 # ---------------------------------------------------------------------------
 # Router Includes (uncomment as routers are implemented)
 # ---------------------------------------------------------------------------
-# from app.routers import auth, stores, tables, menus, option_groups, orders, recommendations
-# app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
-# app.include_router(stores.router, prefix="/api/stores", tags=["stores"])
-# app.include_router(tables.router, prefix="/api/tables", tags=["tables"])
-# app.include_router(menus.router, prefix="/api/menus", tags=["menus"])
-# app.include_router(option_groups.router, prefix="/api/option-groups", tags=["option-groups"])
-# app.include_router(orders.router, prefix="/api/orders", tags=["orders"])
-# app.include_router(recommendations.router, prefix="/api/recommendations", tags=["recommendations"])
+from app.routers import auth, stores, tables
+app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
+app.include_router(stores.router, prefix="/api/stores", tags=["stores"])
+app.include_router(tables.router, prefix="/api/tables", tags=["tables"])
+from app.routers import menus, option_groups, orders, recommendations
+app.include_router(menus.router, prefix="/api/menus", tags=["menus"])
+app.include_router(option_groups.router, prefix="/api/option-groups", tags=["option-groups"])
+app.include_router(orders.router, prefix="/api/orders", tags=["orders"])
+app.include_router(recommendations.router, prefix="/api/recommendations", tags=["recommendations"])

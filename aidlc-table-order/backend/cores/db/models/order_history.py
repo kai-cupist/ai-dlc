@@ -3,8 +3,7 @@
 import uuid
 from datetime import datetime
 
-from sqlalchemy import Index, String, func
-from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy import JSON, Index, String, func
 from sqlalchemy.orm import Mapped, mapped_column
 
 from cores.db.models.base import Base
@@ -27,6 +26,6 @@ class OrderHistory(Base):
     order_number: Mapped[str] = mapped_column(String(20), nullable=False)
     round: Mapped[int] = mapped_column(nullable=False)
     total_amount: Mapped[int] = mapped_column(nullable=False)
-    items_snapshot: Mapped[dict] = mapped_column(JSONB, nullable=False)
+    items_snapshot: Mapped[dict] = mapped_column(JSON, nullable=False)
     ordered_at: Mapped[datetime] = mapped_column(nullable=False)
     archived_at: Mapped[datetime] = mapped_column(nullable=False, server_default=func.now())
