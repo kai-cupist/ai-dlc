@@ -4,7 +4,8 @@
 - **프로젝트명**: 테이블오더 서비스
 - **프로젝트 유형**: Greenfield (신규 프로젝트)
 - **시작일**: 2026-04-08T10:45:00Z
-- **현재 단계**: CONSTRUCTION - backend-api Infrastructure Design (완료)
+- **현재 단계**: CONSTRUCTION - Code Generation 대기 (병렬 전략으로 재구성 완료)
+- **개발 전략**: Contract First 병렬 개발 (OpenAPI + MSW mock)
 
 ## 워크스페이스 상태
 - **기존 코드**: 없음
@@ -32,13 +33,24 @@
 - [x] Application Design - 완료 (2026-04-08)
 - [x] Units Generation - 완료 (2026-04-08)
 
-### CONSTRUCTION 단계 (Unit별 반복)
-- [x] Functional Design - backend-api 완료 (2026-04-08)
-- [x] NFR Requirements - backend-api 완료 (2026-04-08)
-- [x] NFR Design - backend-api 완료 (2026-04-08)
-- [x] Infrastructure Design - backend-api 완료 (2026-04-08)
-- [ ] Code Generation - EXECUTE (항상)
-- [ ] Build and Test - EXECUTE (항상)
+### CONSTRUCTION 단계 (Contract First 병렬 전략)
+
+#### backend-api 설계 (완료)
+- [x] Functional Design - 완료 (2026-04-08)
+- [x] NFR Requirements - 완료 (2026-04-08)
+- [x] NFR Design - 완료 (2026-04-08)
+- [x] Infrastructure Design - 완료 (2026-04-08)
+
+#### Phase 1: shared (API 계약)
+- [ ] Code Generation: shared - 대기
+
+#### Phase 2: 병렬 개발
+- [ ] Code Generation: backend-api - 대기
+- [ ] Code Generation: customer-web - 대기
+- [ ] Code Generation: admin-web - 대기
+
+#### 통합 및 테스트
+- [ ] Build and Test - 대기
 
 ### OPERATIONS 단계
 - [ ] Operations (Placeholder)

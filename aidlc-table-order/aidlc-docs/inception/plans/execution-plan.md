@@ -111,19 +111,29 @@ Phase 3: OPERATIONS
 - [ ] Units Generation - **EXECUTE**
   - **근거**: 백엔드 API, 고객 웹앱, 관리자 웹앱 등 다중 유닛으로 분해 필요
 
-### CONSTRUCTION 단계 (Unit별 반복)
-- [ ] Functional Design - **EXECUTE**
-  - **근거**: 새로운 데이터 모델 (매장, 테이블, 메뉴, 옵션 그룹, 주문 등), 복잡한 비즈니스 로직 (추천, 세션, 회차)
-- [ ] NFR Requirements - **EXECUTE**
-  - **근거**: Security Baseline 15개 규칙, 성능 (2초 폴링), 확장성 (다중 매장 50+ 테이블)
-- [ ] NFR Design - **EXECUTE**
-  - **근거**: NFR Requirements 실행되므로 NFR 패턴 통합 필요
-- [ ] Infrastructure Design - **EXECUTE**
-  - **근거**: Docker 컨테이너, PostgreSQL, AWS S3, 서비스 배포 아키텍처 설계 필요
-- [ ] Code Generation - **EXECUTE** (항상)
-  - **근거**: 코드 구현 필수
+### CONSTRUCTION 단계 (Contract First 병렬 전략)
+
+#### backend-api (설계 완료)
+- [x] Functional Design - **COMPLETED**
+- [x] NFR Requirements - **COMPLETED**
+- [x] NFR Design - **COMPLETED**
+- [x] Infrastructure Design - **COMPLETED**
+
+#### Phase 1: shared (API 계약)
+- [ ] Code Generation - **EXECUTE**
+  - **근거**: OpenAPI 스펙, TypeScript 타입, MSW mock 핸들러 → 병렬 개발 기반
+
+#### Phase 2: 병렬 개발 (3개 유닛 동시)
+- [ ] Code Generation: backend-api - **EXECUTE**
+  - **근거**: API 계약의 실제 구현 (TDD)
+- [ ] Code Generation: customer-web - **EXECUTE**
+  - **근거**: MSW mock 기반 고객 UI 개발
+- [ ] Code Generation: admin-web - **EXECUTE**
+  - **근거**: MSW mock 기반 관리자 UI 개발
+
+#### 통합 및 테스트
 - [ ] Build and Test - **EXECUTE** (항상)
-  - **근거**: 빌드, 단위/통합/E2E 테스트 실행 필수
+  - **근거**: Mock → 실제 API 전환 통합 테스트, E2E 테스트
 
 ### OPERATIONS 단계
 - [ ] Operations - **PLACEHOLDER**
@@ -134,15 +144,14 @@ Phase 3: OPERATIONS
 
 ---
 
-## 예상 유닛 구성
+## 유닛 구성 (Contract First 병렬 전략)
 
-| 유닛 | 설명 | 기술 스택 |
-|------|------|-----------|
-| **backend-api** | REST API 서버 | Python + FastAPI + PostgreSQL |
-| **customer-web** | 고객용 SPA | React + Vite (모바일 최적화) |
-| **admin-web** | 관리자용 SPA | React + Vite (데스크톱 최적화) |
-
-> 유닛 구성은 Units Generation 단계에서 확정됩니다.
+| 유닛 | 설명 | 기술 스택 | Phase |
+|------|------|-----------|-------|
+| **shared** | API 계약 (OpenAPI + 타입 + MSW mock) | TypeScript | Phase 1 |
+| **backend-api** | REST API 서버 (계약 구현) | Python + FastAPI + PostgreSQL | Phase 2 |
+| **customer-web** | 고객용 SPA (mock → 실제 API) | React + Vite (모바일 최적화) | Phase 2 (병렬) |
+| **admin-web** | 관리자용 SPA (mock → 실제 API) | React + Vite (데스크톱 최적화) | Phase 2 (병렬) |
 
 ---
 

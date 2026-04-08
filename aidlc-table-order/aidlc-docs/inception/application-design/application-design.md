@@ -8,6 +8,7 @@
 | **백엔드 구조** | `app/` (비즈니스), `cores/` (공통 인프라), `tests/` |
 | **프론트엔드 상태** | TanStack Query (서버) + Context API (로컬) |
 | **코드 공유** | 모노레포 (shared 패키지 + customer 앱 + admin 앱) |
+| **개발 전략** | Contract First 병렬 개발 (OpenAPI + MSW mock) |
 | **배포 인프라** | Docker + AWS ECS Fargate (Terraform IaC) |
 
 ## 시스템 구조

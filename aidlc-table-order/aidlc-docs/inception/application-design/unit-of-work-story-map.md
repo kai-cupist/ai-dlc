@@ -2,30 +2,32 @@
 
 ## 매핑 요약
 
-| 유닛 | 스토리 수 | 스토리 ID |
-|------|-----------|-----------|
-| shared | 0 (인프라) | - |
-| backend-api | 26 (전체) | US-01 ~ US-26 |
-| customer-web | 15 | US-01, US-03 ~ US-15 |
-| admin-web | 11 | US-02, US-16 ~ US-23, US-26 |
+| 유닛 | 스토리 수 | 스토리 ID | Phase |
+|------|-----------|-----------|-------|
+| shared | 0 (API 계약 인프라) | - | Phase 1 |
+| backend-api | 23 | US-01~06, US-10~26 (US-07~09 제외) | Phase 2 |
+| customer-web | 16 | US-01, US-03~US-15, US-24, US-25 | Phase 2 (병렬) |
+| admin-web | 10 | US-02, US-16~US-23, US-26 | Phase 2 (병렬) |
 
-> **참고**: backend-api는 모든 스토리의 서버 측 로직을 담당합니다.
-> 프론트엔드 유닛은 해당 사용자의 UI를 담당합니다.
+> **Contract First 병렬 전략**: shared에서 OpenAPI 스펙 + 타입 + MSW mock을 먼저 정의합니다.
+> Phase 2에서 backend-api(실제 구현), customer-web(mock), admin-web(mock)이 병렬로 개발됩니다.
 > 에러 스토리(US-24~26)는 관련 유닛에 분산됩니다.
 
 ---
 
 ## 상세 매핑
 
-### Unit 1: shared
-인프라 유닛으로 직접 스토리를 구현하지 않으나, 모든 프론트엔드 스토리의 기반을 제공합니다.
+### Unit 1: shared (API 계약 + 공유 코드)
+API 계약 인프라 유닛. 직접 스토리를 구현하지 않으나 병렬 개발의 기반을 제공합니다.
 
-| 제공 기능 | 사용 스토리 |
-|-----------|------------|
-| API 클라이언트 | 전체 |
-| 인증 훅 (useAuth) | US-01, US-02, US-16 |
-| 타입 정의 (Menu, Order 등) | 전체 |
-| 포맷팅 유틸 (가격, 날짜) | US-07, US-11, US-14, US-15 |
+| 제공 기능 | 사용 스토리 | 설명 |
+|-----------|------------|------|
+| OpenAPI 3.0 스펙 | 전체 | 28개 엔드포인트 계약 정의 (Swagger) |
+| TypeScript 타입 | 전체 | 요청/응답/엔티티 타입 |
+| API 클라이언트 | 전체 | Axios 기반 HTTP 클라이언트 |
+| MSW mock 핸들러 | 전체 | 28개 엔드포인트 mock 응답 |
+| 인증 훅 (useAuth) | US-01, US-02, US-16 | JWT 관리, 자동 로그인 |
+| 포맷팅 유틸 | US-07, US-11, US-14, US-15 | 가격, 날짜 포맷 |
 
 ### Unit 2: backend-api
 

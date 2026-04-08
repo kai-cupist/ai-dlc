@@ -228,3 +228,16 @@
 - 다음: Code Generation (backend-api 설계 단계 전체 완료)
 
 ---
+
+## 유닛 설계 재구성 - Contract First 병렬 전략
+**타임스탬프**: 2026-04-08T11:30:00Z
+**사용자 입력**: "유닛을 병렬로 작업 가능하게 재설계 해줄수있나?" → "진행시켜" → "스웨거도 추가해줘" → "관련된 문서들 모두 업데이트해"
+**AI 응답**: Contract First 병렬 개발 전략으로 유닛 설계 전체 재구성
+**컨텍스트**:
+- 변경 전: shared → backend+customer → admin (직렬)
+- 변경 후: shared(Phase 1) → backend + customer + admin 병렬(Phase 2)
+- shared 역할 확대: API 계약(OpenAPI 3.0/Swagger) + TypeScript 타입 + MSW mock 핸들러
+- 프론트엔드: MSW mock으로 개발 → 백엔드 완성 시 실제 API로 전환
+- 업데이트된 문서: unit-of-work.md, unit-of-work-dependency.md, unit-of-work-story-map.md, execution-plan.md, application-design.md, aidlc-state.md
+
+---
