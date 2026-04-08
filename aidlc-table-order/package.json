@@ -1,0 +1,13 @@
+{
+  "name": "aidlc-table-order",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "shared:build": "npm -w packages/shared run build",
+    "customer:dev": "npm -w apps/customer run dev",
+    "admin:dev": "npm -w apps/admin run dev"
+  }
+}
