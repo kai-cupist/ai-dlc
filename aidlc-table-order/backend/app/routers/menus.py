@@ -43,17 +43,6 @@ async def list_menus(
     return ApiResponse(data=result)
 
 
-@router.get("/{menu_id}", response_model=ApiResponse[MenuDetailResponse])
-async def get_menu_detail(
-    menu_id: str,
-    current_user: TokenPayload = Depends(get_current_user),
-    db: AsyncSession = Depends(get_db_session),
-) -> ApiResponse[MenuDetailResponse]:
-    """Get menu detail with option groups."""
-    result = await MenuService.get_menu_detail(db, menu_id)
-    return ApiResponse(data=result)
-
-
 @router.post("/", response_model=ApiResponse[MenuResponse])
 async def create_menu(
     body: MenuCreateRequest,
@@ -62,6 +51,28 @@ async def create_menu(
 ) -> ApiResponse[MenuResponse]:
     """Create a new menu (admin only)."""
     result = await MenuService.create_menu(db, current_user.store_id, body)
+    return ApiResponse(data=result)
+
+
+@router.put("/order", response_model=ApiResponse[dict])
+async def reorder_menus(
+    body: MenuReorderRequest,
+    current_user: TokenPayload = Depends(require_admin),
+    db: AsyncSession = Depends(get_db_session),
+) -> ApiResponse[dict]:
+    """Reorder menus (admin only)."""
+    await MenuService.reorder_menus(db, current_user.store_id, body.menu_ids)
+    return ApiResponse(data={"reordered": True})
+
+
+@router.get("/{menu_id}", response_model=ApiResponse[MenuDetailResponse])
+async def get_menu_detail(
+    menu_id: str,
+    current_user: TokenPayload = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db_session),
+) -> ApiResponse[MenuDetailResponse]:
+    """Get menu detail with option groups."""
+    result = await MenuService.get_menu_detail(db, menu_id)
     return ApiResponse(data=result)
 
 
@@ -88,14 +99,3 @@ async def delete_menu(
     """Delete a menu (admin only)."""
     await MenuService.delete_menu(db, menu_id, current_user.store_id)
     return ApiResponse(data={"deleted": True})
-
-
-@router.put("/order", response_model=ApiResponse[dict])
-async def reorder_menus(
-    body: MenuReorderRequest,
-    current_user: TokenPayload = Depends(require_admin),
-    db: AsyncSession = Depends(get_db_session),
-) -> ApiResponse[dict]:
-    """Reorder menus (admin only)."""
-    await MenuService.reorder_menus(db, current_user.store_id, body.menu_ids)
-    return ApiResponse(data={"reordered": True})
