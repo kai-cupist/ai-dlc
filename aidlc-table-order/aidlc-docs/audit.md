@@ -203,7 +203,7 @@
 **AI 응답**: NFR 산출물 2개 생성
 **컨텍스트**:
 - nfr-requirements.md: 성능(200ms), 보안(SECURITY-01~15), 가용성(99.5%), 신뢰성, 유지보수성
-- tech-stack-decisions.md: 비동기 SQLAlchemy+asyncpg, Alembic, structlog, slowapi, pytest, poetry
+- tech-stack-decisions.md: 비동기 SQLAlchemy+asyncpg, Alembic, structlog, slowapi, pytest, uv
 - 사용자 "믿고간다" 승인
 
 ---

@@ -25,7 +25,7 @@
 ```
 Stage 1: Builder
   - python:3.12-slim 기반
-  - poetry install (프로덕션 의존성만)
+  - uv sync --no-dev (프로덕션 의존성만)
 
 Stage 2: Runtime
   - python:3.12-slim 기반

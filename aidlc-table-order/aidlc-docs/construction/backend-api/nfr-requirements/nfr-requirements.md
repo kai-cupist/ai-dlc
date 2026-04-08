@@ -22,7 +22,7 @@
 | SECURITY-05 | Pydantic DTO로 전 엔드포인트 입력 검증, 파라미터화 쿼리 (SQLAlchemy) |
 | SECURITY-08 | JWT 미들웨어 매 요청 검증, CORS 허용 origin 제한, IDOR 방지 (store_id 검증) |
 | SECURITY-09 | 프로덕션 에러 응답에 스택 트레이스 미포함, 기본 자격 증명 없음 |
-| SECURITY-10 | poetry.lock 커밋, 의존성 스캔 (safety/pip-audit) |
+| SECURITY-10 | uv.lock 커밋, 의존성 스캔 (safety/pip-audit) |
 | SECURITY-11 | slowapi RateLimiter (복합 키: IP+파라미터/JWT subject) |
 | SECURITY-12 | bcrypt 해싱, 5회 실패 시 15분 잠금, HttpOnly/Secure/SameSite 쿠키 |
 | SECURITY-13 | 안전한 역직렬화 (Pydantic), CDN SRI |
