@@ -270,3 +270,43 @@
 - Phase 1 완료, 다음: Phase 2 병렬 개발 (backend-api + customer-web + admin-web)
 
 ---
+
+## Phase 2: admin-web Code Generation - Part 1 (계획)
+**타임스탬프**: 2026-04-08T12:00:00Z
+**사용자 입력**: "We will work on item 3 - 1,2 will be worked by others. We will create a separate branch and work within it, then make a pr after it is done." → "PR from main. chore/switch-to-uv is stale and should be deleted." → "don't merge. We will set everything to main, pull it then proceed" → "yes begin what should we do?"
+**AI 응답**: 브랜치 정리 (chore/switch-to-uv 삭제, main pull, feature/admin-web 생성), admin-web 코드 생성 계획 작성 (8단계, ~55개 파일)
+**컨텍스트**:
+- chore/switch-to-uv는 이미 origin/main에 머지 완료 상태 → 로컬 pull 후 삭제
+- feature/admin-web 브랜치 생성 (main 기반)
+- admin-web-code-generation-plan.md 생성: 8 Step, 55개 파일, 10개 스토리 전체 커버
+- 사용자 승인 대기 중
+
+---
+
+## Phase 2: admin-web Code Generation - 계획 리뷰 및 승인
+**타임스탬프**: 2026-04-08T12:10:00Z
+**사용자 입력**: "1. what is shadcn?" → Option A (CLI 공식 설치) 선택. "2. I can't decide because I can't imagine what it would look like" → 대시보드 구조 설명 후 모달 방식 승인. "3. use library" → @dnd-kit 사용 확정. "yes proceed"
+**AI 응답**: 계획 업데이트 (shadcn CLI, @dnd-kit), Part 2 코드 생성 시작
+**컨텍스트**:
+- shadcn/ui: Option A (CLI 공식 설치) 확정
+- 대시보드: 그리드 카드 + 모달 오버레이 방식 유지
+- 메뉴 순서: @dnd-kit 라이브러리 사용
+- 계획 승인 완료, Part 2 진행
+
+---
+
+## Phase 2: admin-web Code Generation - Part 2 (생성 완료)
+**타임스탬프**: 2026-04-08T12:30:00Z
+**AI 응답**: admin-web 전체 코드 생성 완료 (53개 파일, 8 Step 전체)
+**컨텍스트**:
+- Step 1: Vite + React + TS + Tailwind + shadcn/ui CLI (14개 컴포넌트) 초기화
+- Step 2: React Router 6개 라우트, AdminLayout (사이드바+헤더), ProtectedRoute
+- Step 3: AuthContext (shared useAuth 래핑), LoginPage (에러/잠금 처리)
+- Step 4: DashboardPage, usePolling (2초), TableGrid+필터, TableCard, OrderDetailModal (상태변경+삭제+이용완료), OrderStatusBadge, PollingStatusIndicator
+- Step 5: TableSetupPage (등록 폼+목록), TableHistoryPage (날짜 필터), useTables
+- Step 6: MenuManagementPage (카테고리 탭), MenuList, MenuFormDialog, MenuSortable (@dnd-kit), useMenus
+- Step 7: OptionGroupPage, OptionGroupList, OptionGroupFormDialog (동적 항목), MenuOptionLinker, useOptionGroups
+- Step 8: code-summary.md (53개 파일 목록, 10/10 스토리 커버리지)
+- 사용자 승인 대기 중
+
+---
