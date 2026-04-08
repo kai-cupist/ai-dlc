@@ -1,0 +1,28 @@
+# ============================================================================
+# Terraform Variables — Example Values
+# Copy this file to terraform.tfvars and adjust values as needed.
+# ============================================================================
+
+# General
+project_name = "table-order"
+environment  = "prod"
+aws_region   = "ap-northeast-2"
+
+# RDS
+db_instance_class    = "db.t3.micro"
+db_allocated_storage = 20
+db_name              = "tableorder"
+db_username          = "tableorder_admin"
+
+# ECS
+ecs_cpu           = 512
+ecs_memory        = 1024
+ecs_desired_count = 1
+container_port    = 8000
+ecr_image_tag     = "latest"
+
+# Application
+cors_origins = ["https://example.com"]
+
+# ALB — provide an ACM certificate ARN for HTTPS; leave empty for HTTP-only (MVP)
+certificate_arn = ""
